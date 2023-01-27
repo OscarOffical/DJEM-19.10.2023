@@ -13,7 +13,7 @@ public class Music : MonoBehaviour
 
     private void Start()
     {
-        _volume.value = 1;
+        _volume.value = 0.3f;
     }
     public void VolumeControl()
     {
