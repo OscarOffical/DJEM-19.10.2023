@@ -13,9 +13,9 @@ public class ItemScripteblObject : ScriptableObject
     public int  MaximumAmout = 10; // макс количество в инвентаре
     public string itemDescription;// описатине объекта
 
-    public Sprite icon; 
+    public Sprite icon;// то как бкжет выгдядеть обьект в инвенторе  
 
-    public GameObject ItemPrifbs;
+    public GameObject ItemPrifbs;// префаб обекта, который должен выподать их инвенторя.
 }
 public enum ItemType
 {

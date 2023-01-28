@@ -30,9 +30,9 @@ public class InventaryManger : MonoBehaviour
         PanelInvetary.SetActive(false);
 
 
-        for (int i = 0; i < InventaryPanel.childCount; i++)
+        for (int i = 0; i < InventaryPanel.childCount; i++) // перебеарет все €чейки иневентор€ 
         {
-            if(InventaryPanel.GetChild(i).GetComponent<InventarySlot>() != null)
+            if(InventaryPanel.GetChild(i).GetComponent<InventarySlot>() != null)// если €чека существует и внутри что-то есть 
             {
                 slot.Add(InventaryPanel.GetChild(i).GetComponent<InventarySlot>());
             }          
@@ -112,7 +112,7 @@ public class InventaryManger : MonoBehaviour
                     slots.ItemAmountText.text = slots.amount.ToString();
                     return;
                 }
-                break;
+                continue;
             }
         }
         foreach (InventarySlot slots in slot)// луп если это первый объект и его только нужно добавить
