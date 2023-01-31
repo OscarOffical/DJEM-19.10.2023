@@ -12,13 +12,9 @@ public class InventaryManger : MonoBehaviour
     public Transform InventaryPanel; // позици€ €чеййкм в ивентаре
     public List<InventarySlot> slot = new List<InventarySlot>();// список словтов 
 
-    [Header("Open and close panel inventary")]
+    [Header("Open and close panel inventary")]// открытие закрытие
     public GameObject PanelInvetary;
     public bool isOpen;
-
-    public bool mognopologit;
-
-   
 
     private void Awake()
     {
@@ -32,9 +28,9 @@ public class InventaryManger : MonoBehaviour
 
         for (int i = 0; i < InventaryPanel.childCount; i++) // перебеарет все €чейки иневентор€ 
         {
-            if(InventaryPanel.GetChild(i).GetComponent<InventarySlot>() != null)// если €чека существует и внутри что-то есть 
+            if(InventaryPanel.GetChild(i).GetComponent<InventarySlot>() != null)// беретс€ объект инветнарь и провер€етс€ каждый его дочерний объект, на наличее существовани€ дочернего обекта 
             {
-                slot.Add(InventaryPanel.GetChild(i).GetComponent<InventarySlot>());
+                slot.Add(InventaryPanel.GetChild(i).GetComponent<InventarySlot>()); // если дочений объект существует, то он добовл€етс€ в список. 
             }          
              
         }
@@ -46,12 +42,6 @@ public class InventaryManger : MonoBehaviour
     void Update()
     {
         PanelInventary();
-
-
-      
-            
-          
-
 
     }
 
@@ -104,11 +94,11 @@ public class InventaryManger : MonoBehaviour
     {
         foreach (InventarySlot slots in slot)// луп если объект уже есть в инвентаре. 
         {
-            if (slots.item == _item)
+            if (slots.item == _item) // если предмет из скриптебл обжекта равен объекту из слота то провер€етс€ следующий кусок 
             {
-                if (slots.amount + _amount <= _item.MaximumAmout)
+                if (slots.amount + _amount <= _item.MaximumAmout) // проверка количеста предметов в слоте, если оно меньше макс то происходит следующий шаг 
                 {
-                    slots.amount += _amount;
+                    slots.amount += _amount; // к количесту в инвентаре добовл€етс€ количесто при подЄме с земли. 
                     slots.ItemAmountText.text = slots.amount.ToString();
                     return;
                 }
@@ -117,13 +107,13 @@ public class InventaryManger : MonoBehaviour
         }
         foreach (InventarySlot slots in slot)// луп если это первый объект и его только нужно добавить
         {
-            if(slots.isEmpty == true) 
+            if(slots.isEmpty == true) // если слот пустой, то туда можно добавить объект. 
             {
-                slots.item = _item;  
-                slots.amount = _amount;
-                slots.isEmpty = false;
-                slots.SetIcon(_item.icon);
-                slots.ItemAmountText.text = _amount.ToString();
+                slots.item = _item;  // заносим карику 
+                slots.amount = _amount; // заносим колличество 
+                slots.isEmpty = false; // делаем €чейку заполненой 
+                slots.SetIcon(_item.icon); // берем картинку 
+                slots.ItemAmountText.text = _amount.ToString();// текст.
                 break;
               
                

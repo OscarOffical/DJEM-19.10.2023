@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\SenseGame\GunScrint\ProtatapeGun.cs" />
+    <Compile Include="Assets\Script\SenseGame\Inventary\DragAndDrop.cs" />
     <Compile Include="Assets\Script\SenseGame\PlayerControler.cs" />
     <Compile Include="Assets\Script\SenseGame\Inventary\ItemFood.cs" />
     <Compile Include="Assets\Script\OpenHotkeysPanel.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Assets\Script\OpenClose.cs" />
     <Compile Include="Assets\Script\PanelOptoin\ButtonPanelOpption.cs" />
     <Compile Include="Assets\Script\OpenGraphicsPanel.cs" />
+    <Compile Include="Assets\Script\SenseGame\Inventary\ItemHeal.cs" />
     <Compile Include="Assets\Script\SenseGame\Inventary\ItemScripteblObject.cs" />
     <Compile Include="Assets\Script\SenseGame\WeaponКotation.cs" />
     <Compile Include="Assets\Script\ISetActionPanel.cs" />
@@ -79,7 +81,6 @@
     <Compile Include="Assets\Script\SenseGame\GunScrint\ProtatypeAmmo.cs" />
     <Compile Include="Assets\Script\ScreenResoiution.cs" />
     <Compile Include="Assets\Script\QuitButton.cs" />
-    <Compile Include="Assets\Script\SenseGame\Inventary\DragAndDrop.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

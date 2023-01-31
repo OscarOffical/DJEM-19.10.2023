@@ -22,7 +22,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         // ≈сли слот пустой, то мы не выполн€ем то что ниже return;
         if (oldSlot.isEmpty)
             return;
-        GetComponent<RectTransform>().position += new Vector3(eventData.delta.x, eventData.delta.y);
+        GetComponent<RectTransform>().anchoredPosition += eventData.delta;
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -107,7 +108,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         oldSlot.amount = amount;
         if (isEmpty == false)
         {
-            oldSlot.SetIcon(iconGO.GetComponent<Image>().sprite);
+            oldSlot.SetIcon(item.icon);
             oldSlot.ItemAmountText.text = amount.ToString();
         }
         else

@@ -27,6 +27,6 @@ public class InventarySlot : MonoBehaviour
     public void SetIcon(Sprite icon) // тут поступает картинка 
     {
         iconGO.GetComponent<Image>().color = new Color(1, 1, 1, 1); // тут картинка становиться вимдемой
-        iconGO.GetComponent<Image>().sprite = icon; // от тсюда идет катинка 
+        iconGO.GetComponent<Image>().sprite = icon; // от тсюда идет картинка 
     }
 }
