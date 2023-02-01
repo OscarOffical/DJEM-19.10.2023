@@ -81,6 +81,7 @@
     <Compile Include="Assets\Script\SenseGame\GunScrint\ProtatypeAmmo.cs" />
     <Compile Include="Assets\Script\ScreenResoiution.cs" />
     <Compile Include="Assets\Script\QuitButton.cs" />
+    <Compile Include="Assets\Script\SenseGame\Inventary\QulckPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

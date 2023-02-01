@@ -70,17 +70,17 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     void NullifySlotData()
     {
         // убираем значени€ InventorySlot
-        oldSlot.item = null;
-        oldSlot.amount = 0;
-        oldSlot.isEmpty = true;
-        oldSlot.iconGO.GetComponent<Image>().color = new Color(1, 1, 1, 0);
-        oldSlot.iconGO.GetComponent<Image>().sprite = null;
-        oldSlot.ItemAmountText.text = "";
+        oldSlot.item = null; // айтем мтановитьс€ пустым 
+        oldSlot.amount = 0;// количетсво в инвенторе равно нулю
+        oldSlot.isEmpty = true;// слот становитьс€ пустым 
+        oldSlot.iconGO.GetComponent<Image>().color = new Color(1, 1, 1, 0);// цвет каринку равен 0 
+        oldSlot.iconGO.GetComponent<Image>().sprite = null; // катринки нет
+        oldSlot.ItemAmountText.text = "";// пустое количетво
     }
     void ExchangeSlotData(InventarySlot newSlot)
     {
         // ¬ременно храним данные newSlot в отдельных переменных
-        ItemScripteblObject item = newSlot.item;
+        ItemScripteblObject item = newSlot.item; 
         int amount = newSlot.amount;
         bool isEmpty = newSlot.isEmpty;
         GameObject iconGO = newSlot.iconGO;
@@ -89,9 +89,10 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         // «амен€ем значени€ newSlot на значени€ oldSlot
         newSlot.item = oldSlot.item;
         newSlot.amount = oldSlot.amount;
-        if (oldSlot.isEmpty == false)
+
+        if (oldSlot.isEmpty == false)// если в €чеуи нет другого объета или €чейка пуста€.
         {
-            newSlot.SetIcon(oldSlot.iconGO.GetComponent<Image>().sprite);
+            newSlot.SetIcon(oldSlot.iconGO.GetComponent<Image>().sprite);// заносит картинку в пустой слот 
             newSlot.ItemAmountText.text = oldSlot.amount.ToString();
         }
         else
