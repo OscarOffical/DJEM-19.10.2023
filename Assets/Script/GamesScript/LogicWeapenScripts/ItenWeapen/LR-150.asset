@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971dfe8bfdd8a1a4394309d2982c5934, type: 3}
+  m_Name: LR-150
+  m_EditorClassIdentifier: 
+  _name: LR-150
+  _description: 
+  _maximunMagazin: 30
+  StartShot: -0.0018613893
+  EndShot: 0.2
+  PrefabsWeapen: {fileID: 5630586633030239075, guid: 68cfa941f3de7cd4cbe7c97c395deae1, type: 3}
+  PrefabsBullet: {fileID: 3550120239806298539, guid: 241d4756172888740a9e32bac4f0460d, type: 3}
+  IconMagazin: {fileID: -1516216869, guid: decf4b1f1f10835449fc1416cc24eb4b, type: 3}
+  secondsToEmptyRecgarg: 5
+  Aboima: 3

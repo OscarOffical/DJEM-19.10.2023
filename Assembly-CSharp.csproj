@@ -56,32 +56,35 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\SenseGame\GunScrint\ProtatapeGun.cs" />
-    <Compile Include="Assets\Script\SenseGame\Inventary\DragAndDrop.cs" />
-    <Compile Include="Assets\Script\SenseGame\PlayerControler.cs" />
-    <Compile Include="Assets\Script\SenseGame\Inventary\ItemFood.cs" />
+    <Compile Include="Assets\Script\GamesScript\LogicWeapenScripts\ProtatapeGun.cs" />
+    <Compile Include="Assets\Script\GamesScript\Inventary\DragAndDrop.cs" />
+    <Compile Include="Assets\Script\GamesScript\LogicWeapenScripts\ItemScripteblsObjectWeapen.cs" />
+    <Compile Include="Assets\Script\GamesScript\Player\PlayerControler.cs" />
+    <Compile Include="Assets\Script\GamesScript\LogicWeapenScripts\IShot.cs" />
+    <Compile Include="Assets\Script\GamesScript\Inventary\ItemFood.cs" />
     <Compile Include="Assets\Script\OpenHotkeysPanel.cs" />
-    <Compile Include="Assets\Script\SenseGame\GunScrint\AK47.cs" />
     <Compile Include="Assets\Script\OpenClose.cs" />
     <Compile Include="Assets\Script\PanelOptoin\ButtonPanelOpption.cs" />
     <Compile Include="Assets\Script\OpenGraphicsPanel.cs" />
-    <Compile Include="Assets\Script\SenseGame\Inventary\ItemHeal.cs" />
-    <Compile Include="Assets\Script\SenseGame\Inventary\ItemScripteblObject.cs" />
-    <Compile Include="Assets\Script\SenseGame\WeaponКotation.cs" />
+    <Compile Include="Assets\Script\GamesScript\Inventary\ItemHeal.cs" />
+    <Compile Include="Assets\Script\GamesScript\Inventary\ItemScripteblObject.cs" />
+    <Compile Include="Assets\Script\GamesScript\Player\WeaponКotation.cs" />
     <Compile Include="Assets\Script\ISetActionPanel.cs" />
-    <Compile Include="Assets\Script\SenseGame\Inventary\InventaryManger.cs" />
-    <Compile Include="Assets\Script\SenseGame\GunScrint\Bizon.cs" />
+    <Compile Include="Assets\Script\GamesScript\Inventary\InventaryManger.cs" />
     <Compile Include="Assets\Script\ScenesScript\ManagerScenes.cs" />
     <Compile Include="Assets\Script\SoundsScripts\Sound.cs" />
-    <Compile Include="Assets\Script\SenseGame\Inventary\InventarySlot.cs" />
+    <Compile Include="Assets\Script\GamesScript\Inventary\InventarySlot.cs" />
     <Compile Include="Assets\Script\PanelOptoin\ClosePanelSound.cs" />
-    <Compile Include="Assets\Script\SenseGame\Inventary\Item.cs" />
+    <Compile Include="Assets\Script\GamesScript\Player\WeaponGun.cs" />
+    <Compile Include="Assets\Script\GamesScript\Inventary\Item.cs" />
     <Compile Include="Assets\Script\OpenPanelSound.cs" />
     <Compile Include="Assets\Script\SoundsScripts\Music.cs" />
-    <Compile Include="Assets\Script\SenseGame\GunScrint\ProtatypeAmmo.cs" />
+    <Compile Include="Assets\Script\GamesScript\LogicWeapenScripts\ProtatypeAmmo.cs" />
     <Compile Include="Assets\Script\ScreenResoiution.cs" />
+    <Compile Include="Assets\Script\GamesScript\LogicWeapenScripts\LogicWeapan.cs" />
     <Compile Include="Assets\Script\QuitButton.cs" />
-    <Compile Include="Assets\Script\SenseGame\Inventary\QulckPanel.cs" />
+    <Compile Include="Assets\Script\GamesScript\Player\Indicetors.cs" />
+    <Compile Include="Assets\Script\GamesScript\Inventary\QulckPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
