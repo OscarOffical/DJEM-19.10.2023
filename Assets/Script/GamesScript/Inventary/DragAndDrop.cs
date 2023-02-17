@@ -1,15 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     public InventarySlot oldSlot;
     private Transform player;
     private QulckPanel qulckpanel;
+    public InventaryManger InventaryManger;
+
+
+
+
+    public GameObject AdditionalInformation;// пнель дополнительной информации.
+    public bool isOpenes = true;
+    public TMP_Text NameItem;
+    public TMP_Text DescriptionItem;
+    public ButtonUseing buttonUseing;
+
+
+
 
     private void Start()
     {
@@ -17,7 +33,16 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         player = GameObject.FindGameObjectWithTag("Player").transform;
         // Находим скрипт InventorySlot в слоте в иерархии
         oldSlot = transform.GetComponentInParent<InventarySlot>();
+       
         qulckpanel = FindObjectOfType<QulckPanel>();
+
+        buttonUseing = FindObjectOfType<ButtonUseing>();
+
+        
+
+       
+
+
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -38,7 +63,33 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         GetComponentInChildren<Image>().raycastTarget = false;
         // Делаем наш DraggableObject ребенком InventoryPanel чтобы DraggableObject был над другими слотами инвенторя
         transform.SetParent(transform.parent.parent);
+
+
+        if (isOpenes == true)
+        {
+            AdditionalInformation.SetActive(true);
+            isOpenes = false;
+            buttonUseing.idSlot = oldSlot.IdSlot;
+
+        }
+        else if (isOpenes == false)
+        {
+            AdditionalInformation.SetActive(false);
+            isOpenes = true;
+            NameItem.text = oldSlot.item.name;
+            DescriptionItem.text = oldSlot.item.name;
+
+
+
+        }
+
+
+
+
     }
+
+
+
 
     public void OnPointerUp(PointerEventData eventData)
     {
@@ -61,6 +112,9 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             itemObject.GetComponent<Item>().amount = oldSlot.amount;
             // убираем значения InventorySlot
             NullifySlotData();
+
+           
+
         }
         else if (eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventarySlot>() != null)
         {
@@ -68,6 +122,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventarySlot>());
             qulckpanel.CheckItemHand();
         }
+
+       
+
+
+
 
     }
     public void NullifySlotData()

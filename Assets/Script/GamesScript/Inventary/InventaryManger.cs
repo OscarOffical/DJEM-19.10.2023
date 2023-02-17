@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
@@ -18,8 +19,16 @@ public class InventaryManger : MonoBehaviour
     public bool isOpen;
     public Canvas Cs;
 
+    public  InventarySlot[] inventarySlot;
+
+   
+
+
+
+
     private void Awake()
     {
+
         PanelInvetary.SetActive(true);
         Cs.GetComponent<GraphicRaycaster>().enabled = false;
     }
@@ -28,24 +37,34 @@ public class InventaryManger : MonoBehaviour
     {
         PanelInvetary.SetActive(false);
 
-
+       
 
         for (int i = 0; i < InventaryPanel.childCount; i++) // перебеарет все €чейки иневентор€ 
         {
+
             if(InventaryPanel.GetChild(i).GetComponent<InventarySlot>() != null)// беретс€ объект инветнарь и провер€етс€ каждый его дочерний объект, на наличее существовани€ дочернего обекта 
             {
                 slot.Add(InventaryPanel.GetChild(i).GetComponent<InventarySlot>()); // если дочений объект существует, то он добовл€етс€ в список. 
-            }          
+
+                inventarySlot[i].IdSlot = i;
+                
+            }
+            
              
         }
+       
 
-        
+
+
     }
 
     
     void Update()
     {
         PanelInventary();
+
+        
+
 
     }
 

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - debg
+  - NameItem
+  - Description
+  - Info
   layers:
   - Default
   - TransparentFX

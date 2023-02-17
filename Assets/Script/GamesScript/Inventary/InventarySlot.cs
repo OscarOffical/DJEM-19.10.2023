@@ -14,6 +14,12 @@ public class InventarySlot : MonoBehaviour
     public TMP_Text ItemAmountText;// количество в цибрах( визуал) 
 
 
+   
+    public int IdSlot;
+
+
+
+
     private void Awake()
     {
         iconGO = transform.GetChild(0).GetChild(0).gameObject; // заносить в iconGo положение картинки которая будет отобрачаться в слоте, берет 0 
@@ -21,8 +27,16 @@ public class InventarySlot : MonoBehaviour
 
 
         ItemAmountText = transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();// тоже самое 
-
+        
     }
+    
+
+    private void Update()
+    {
+        
+    }
+
+
 
     public void SetIcon(Sprite icon) // тут поступает картинка 
     {

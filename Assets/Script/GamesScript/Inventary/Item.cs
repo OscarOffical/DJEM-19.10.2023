@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+   
+
+   
 
     //Скрипт используеться для того чтобы занести объект и количество за подниаемый раз.
     public ItemScripteblObject item; // нужет чтобы чтобы получить пораметр.
     public int amount=1; // колличестов при поднимание.
+    
+
+
+    
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a75fd1a7be59d145bebe1222e8f82b9, type: 3}
+  m_Name: Basbolbat
+  m_EditorClassIdentifier: 
+  ItemType: 0
+  ItemName: Basbolbat
+  MaximumAmout: 1
+  itemDescription: 
+  icon: {fileID: -1891376938, guid: ca3521f203f5bdf47b2757d95cd32325, type: 3}
+  ItemPrifbs: {fileID: 8057224883993029151, guid: b70bf73e01ad8af4283cf4a9127de045, type: 3}
+  isConsumeable: 0
+  changeFood: 0
+  ChangeHealth: 0
+  ChangeWater: 0
+  RecoveryFood: 0

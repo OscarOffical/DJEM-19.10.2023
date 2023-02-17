@@ -11,7 +11,10 @@ public class Indicetors : MonoBehaviour
     public float healthAmount = 100;
     public float foodAmount = 100;
     public float waterAmount = 100;
+
+    public float MaxStamina = 5; 
     public float StaminaAmount;
+    public float SumStamina;
 
     
 
@@ -22,11 +25,16 @@ public class Indicetors : MonoBehaviour
     void Start()
     {
         StaminaAmount += playerControler._stamina;
+        SumStamina = ((StaminaAmount * 100) / MaxStamina);
+        staminaBar.fillAmount = SumStamina;
+
+
 
         healthBar.fillAmount = healthAmount / 100;
         foodBar.fillAmount = foodAmount / 100;
         waterBar.fillAmount = waterAmount / 100;
-        staminaBar.fillAmount = StaminaAmount;
+
+       
     }
 
     // Update is called once per frame
@@ -34,6 +42,7 @@ public class Indicetors : MonoBehaviour
     {
 
         StaminaAmount = playerControler._stamina;
+        SumStamina = ((StaminaAmount * 100) / MaxStamina) ;
 
         if (foodAmount > 0)
         {
@@ -56,9 +65,9 @@ public class Indicetors : MonoBehaviour
         }
         healthBar.fillAmount = healthAmount / 100;
 
-        if(StaminaAmount > 0)
+        if(SumStamina > 0)
         {
-            staminaBar.fillAmount = StaminaAmount/ 100;
+            staminaBar.fillAmount = SumStamina/ 100;
 
         }
     }

@@ -10,7 +10,7 @@ public class PlayerControler : MonoBehaviour
 
     private float _moveInputX;
     private float _moveInputY;
-    [SerializeField] private float _speed = 3F;
+    [SerializeField] private float _speed = 6F;
     private  Rigidbody2D player;
 
 
@@ -56,7 +56,7 @@ public class PlayerControler : MonoBehaviour
             if (_stamina >= 0)
             {
                 
-                _speed = 6;
+                _speed = 12;
                 _stamina -= 1 * Time.deltaTime;
 
             }
@@ -71,7 +71,7 @@ public class PlayerControler : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
 
-            _speed = 3;
+            _speed = 6;
 
             RecoveryStamin = true;
             

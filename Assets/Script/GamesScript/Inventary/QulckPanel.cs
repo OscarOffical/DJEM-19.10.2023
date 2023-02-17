@@ -29,6 +29,8 @@ public class QulckPanel : MonoBehaviour
     {
         PrefabsMagazin.gameObject.SetActive(false);
         TeXtMagazin.gameObject.SetActive(false);
+
+
     }
 
 

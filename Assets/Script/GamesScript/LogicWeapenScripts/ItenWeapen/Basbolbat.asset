@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971dfe8bfdd8a1a4394309d2982c5934, type: 3}
+  m_Name: Basbolbat
+  m_EditorClassIdentifier: 
+  _name: 
+  _description: 
+  _maximunMagazin: 0
+  StartShot: -0.0039519775
+  EndShot: 1
+  PrefabsWeapen: {fileID: 8057224883993029151, guid: b70bf73e01ad8af4283cf4a9127de045, type: 3}
+  PrefabsBullet: {fileID: 0}
+  IconMagazin: {fileID: -1891376938, guid: ca3521f203f5bdf47b2757d95cd32325, type: 3}
+  secondsToEmptyRecgarg: 0
+  Aboima: 0
