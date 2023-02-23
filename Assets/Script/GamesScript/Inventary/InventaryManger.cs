@@ -21,36 +21,43 @@ public class InventaryManger : MonoBehaviour
 
     public  InventarySlot[] inventarySlot;
 
-   
+
+    public Transform AttackPosition;
+    public float AttaclReang;
+    public LayerMask LayerMask;
 
 
+
+    public CraftManager craftManager;
 
 
     private void Awake()
     {
 
         PanelInvetary.SetActive(true);
+        PanelInvetary.SetActive(false);
         Cs.GetComponent<GraphicRaycaster>().enabled = false;
     }
 
     void Start()
     {
-        PanelInvetary.SetActive(false);
-
+        
+        craftManager = GetComponent<CraftManager>();
        
 
-        for (int i = 0; i < InventaryPanel.childCount; i++) // перебеарет все €чейки иневентор€ 
+        for (int i = 0; i <= InventaryPanel.childCount; i++) // перебеарет все €чейки иневентор€ 
         {
-
-            if(InventaryPanel.GetChild(i).GetComponent<InventarySlot>() != null)// беретс€ объект инветнарь и провер€етс€ каждый его дочерний объект, на наличее существовани€ дочернего обекта 
+            
+            if (InventaryPanel.GetChild(i).GetComponent<InventarySlot>() != null)// беретс€ объект инветнарь и провер€етс€ каждый его дочерний объект, на наличее существовани€ дочернего обекта 
             {
-                slot.Add(InventaryPanel.GetChild(i).GetComponent<InventarySlot>()); // если дочений объект существует, то он добовл€етс€ в список. 
-
-                inventarySlot[i].IdSlot = i;
                 
+                slot.Add(InventaryPanel.GetChild(i).GetComponent<InventarySlot>()); // если дочений объект существует, то он добовл€етс€ в список. 
+                inventarySlot[i].IdSlot = i;
+
+
             }
             
-             
+
         }
        
 
@@ -62,34 +69,80 @@ public class InventaryManger : MonoBehaviour
     void Update()
     {
         PanelInventary();
+        Using();
 
-        
+
 
 
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+
+    //           if (Input.GetKeyDown(KeyCode.E))
+    //           {
+    //                    if (collision.gameObject.GetComponent<Item>() != null)
+    //                    {            
+    //                        AddItemInventary(collision.gameObject.GetComponent<Item>().item, collision.gameObject.GetComponent<Item>().amount);
+    //                        Destroy(collision.gameObject);
+    //                    }
+
+
+    //           }
+
+    //}
+
+
+    public void Using()
     {
-               if (collision.gameObject.GetComponent<Item>() != null)
-                    if (Input.GetKeyDown(KeyCode.E))
-              {
-                    {            
-                        AddItemInventary(collision.gameObject.GetComponent<Item>().item, collision.gameObject.GetComponent<Item>().amount);
-                        Destroy(collision.gameObject);
-                    }
+        Collider2D[] enimes = Physics2D.OverlapCircleAll(AttackPosition.position, AttaclReang, LayerMask);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            for (int i = 0; i < enimes.Length; i++)
+            {
+                if (enimes[i].gameObject.GetComponent<Item>() != null)
+                {
+                    AddItemInventary(enimes[i].gameObject.GetComponent<Item>().item, enimes[i].gameObject.GetComponent<Item>().amount);
+                    Destroy(enimes[i].gameObject);
                 }
 
+            }
+
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(AttackPosition.position, AttaclReang);
     }
 
 
+    
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
 
-    private void PanelInventary()
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        if (collision.gameObject.GetComponent<Item>() != null)
+    //        {
+    //            AddItemInventary(collision.gameObject.GetComponent<Item>().item, collision.gameObject.GetComponent<Item>().amount);
+    //            Destroy(collision.gameObject);
+    //        }
+
+
+    //    }
+
+    //}
+
+
+    public void PanelInventary()
      {
         if (Input.GetKeyDown(KeyCode.I))
         {
             isOpen = !isOpen;
 
-            if (isOpen)
+            if (isOpen && craftManager.isOpenCraft == false)
             {
                 PanelInvetary.SetActive(true);
                 gameObject.GetComponent<PlayerControler>().enabled = false;
@@ -97,9 +150,10 @@ public class InventaryManger : MonoBehaviour
                 //gameObject.GetComponentInChildren<ProtatapeGun>().enabled = false;
                 Time.timeScale = 0;
                 Cs.GetComponent<GraphicRaycaster>().enabled = true;
+               
 
             }
-            else
+            else 
             {
                 PanelInvetary.SetActive(false);
                 gameObject.GetComponent<PlayerControler>().enabled = true;
@@ -107,6 +161,7 @@ public class InventaryManger : MonoBehaviour
                 //gameObject.GetComponentInChildren<ProtatapeGun>().enabled = true;
                 Time.timeScale = 1;
                 Cs.GetComponent<GraphicRaycaster>().enabled = false;
+                
 
             }
         }
@@ -114,6 +169,8 @@ public class InventaryManger : MonoBehaviour
        
 
     }
+
+
 
 
     public void AddItemInventary(ItemScripteblObject _item, int _amount)

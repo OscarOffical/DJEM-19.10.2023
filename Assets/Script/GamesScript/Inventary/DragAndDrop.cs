@@ -22,10 +22,13 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public bool isOpenes = true;
     public TMP_Text NameItem;
     public TMP_Text DescriptionItem;
+
+   
+    public OpenClosePAnelInfo openClosePAnelInfo;
+
+    [Header("Button Info")]
     public ButtonUseing buttonUseing;
-
-
-
+    public ButtonCreat buttonCreat;
 
     private void Start()
     {
@@ -37,93 +40,126 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         qulckpanel = FindObjectOfType<QulckPanel>();
 
         buttonUseing = FindObjectOfType<ButtonUseing>();
+        buttonCreat= FindObjectOfType<ButtonCreat>();
 
-        
-
+       openClosePAnelInfo = GetComponent<OpenClosePAnelInfo>();
        
 
 
     }
     public void OnDrag(PointerEventData eventData)
     {
-        // Если слот пустой, то мы не выполняем то что ниже return;
-        if (oldSlot.isEmpty)
-            return;
-        GetComponent<RectTransform>().anchoredPosition += eventData.delta;
+       
+        
+            // Если слот пустой, то мы не выполняем то что ниже return;
+            if (oldSlot.isEmpty == true)
+                return;
+            else if(Input.GetMouseButton(0) && oldSlot.isEmpty == false) 
+            GetComponent<RectTransform>().anchoredPosition += eventData.delta;
+            
+
+       
+       
+       
+
+
+
+
+
 
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (oldSlot.isEmpty)
-            return;
-        //Делаем картинку прозрачнее
-        GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0.75f);
-        // Делаем так чтобы нажатия мышкой не игнорировали эту картинку
-        GetComponentInChildren<Image>().raycastTarget = false;
-        // Делаем наш DraggableObject ребенком InventoryPanel чтобы DraggableObject был над другими слотами инвенторя
-        transform.SetParent(transform.parent.parent);
+        
+            if (oldSlot.isEmpty == true )
+            {
+                return;
+            }
+            else if(Input.GetMouseButtonDown(0) && oldSlot.isEmpty == false)
+            {
+                //Делаем картинку прозрачнее
+                GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0.75f);
+                // Делаем так чтобы нажатия мышкой не игнорировали эту картинку
+                GetComponentInChildren<Image>().raycastTarget = false;
+                // Делаем наш DraggableObject ребенком InventoryPanel чтобы DraggableObject был над другими слотами инвенторя
+                transform.SetParent(transform.parent.parent);
+                
+            }
+        
+        
+            
 
+        //if (isOpenes == true)
+        //{
+        //    AdditionalInformation.SetActive(true);
+        //    isOpenes = false;
 
-        if (isOpenes == true)
+        //}
+        //else if (isOpenes == false)
+        //{
+        //    AdditionalInformation.SetActive(false);
+        //    isOpenes = true;
+        //    NameItem.text = oldSlot.item.name;
+        //    DescriptionItem.text = oldSlot.item.name;
+        //}
+        if (Input.GetMouseButtonDown(1))
         {
-            AdditionalInformation.SetActive(true);
-            isOpenes = false;
-            buttonUseing.idSlot = oldSlot.IdSlot;
+            if (gameObject.GetComponent<OpenClosePAnelInfo>() != null)
+            {
 
+
+                openClosePAnelInfo.OpenClose();
+                buttonUseing.idSlot = oldSlot.IdSlot;
+                buttonCreat.IdUseingSlot = oldSlot.IdSlot;
+
+
+            }
         }
-        else if (isOpenes == false)
-        {
-            AdditionalInformation.SetActive(false);
-            isOpenes = true;
-            NameItem.text = oldSlot.item.name;
-            DescriptionItem.text = oldSlot.item.name;
-
-
-
-        }
-
-
 
 
     }
 
-
+       
 
 
     public void OnPointerUp(PointerEventData eventData)
     {
         if (oldSlot.isEmpty)
             return;
-        // Делаем картинку опять не прозрачной
-        GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1f);
-        // И чтобы мышка опять могла ее засечь
-        GetComponentInChildren<Image>().raycastTarget = true;
-
-        //Поставить DraggableObject обратно в свой старый слот
-        transform.SetParent(oldSlot.transform);
-        transform.position = oldSlot.transform.position;
-        //Если мышка отпущена над объектом по имени UIPanel, то...
-        if (eventData.pointerCurrentRaycast.gameObject.name == "UIPanel")
+        else if (Input.GetMouseButtonUp(0) && oldSlot.isEmpty == false)
         {
-            // Выброс объектов из инвентаря - Спавним префаб обекта перед персонажем
-            GameObject itemObject = Instantiate(oldSlot.item.ItemPrifbs, player.position + Vector3.up + player.forward, Quaternion.identity);
-            // Устанавливаем количество объектов такое какое было в слоте
-            itemObject.GetComponent<Item>().amount = oldSlot.amount;
-            // убираем значения InventorySlot
-            NullifySlotData();
 
-           
+            // Делаем картинку опять не прозрачной
+            GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1f);
+            // И чтобы мышка опять могла ее засечь
+            GetComponentInChildren<Image>().raycastTarget = true;
+
+            //Поставить DraggableObject обратно в свой старый слот
+            transform.SetParent(oldSlot.transform);
+            transform.position = oldSlot.transform.position;
+            //Если мышка отпущена над объектом по имени UIPanel, то...
+            if (eventData.pointerCurrentRaycast.gameObject.name == "UIPanel" )
+            {
+                // Выброс объектов из инвентаря - Спавним префаб обекта перед персонажем
+                GameObject itemObject = Instantiate(oldSlot.item.ItemPrifbs, player.position + Vector3.up + player.forward, Quaternion.identity);
+                // Устанавливаем количество объектов такое какое было в слоте
+                itemObject.GetComponent<Item>().amount = oldSlot.amount;
+                // убираем значения InventorySlot
+                NullifySlotData();
+
+
+
+            }
+            else if (eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventarySlot>() != null)
+            {
+                //Перемещаем данные из одного слота в другой
+                ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventarySlot>());
+                qulckpanel.CheckItemHand();
+            }
 
         }
-        else if (eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventarySlot>() != null)
-        {
-            //Перемещаем данные из одного слота в другой
-            ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventarySlot>());
-            qulckpanel.CheckItemHand();
-        }
 
-       
 
 
 

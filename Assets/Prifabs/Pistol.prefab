@@ -44,13 +44,13 @@ GameObject:
   - component: {fileID: 698097100512199634}
   - component: {fileID: 2365719820122390007}
   - component: {fileID: 1767594817}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &698097100512199596
 Transform:
   m_ObjectHideFlags: 0
@@ -168,3 +168,5 @@ MonoBehaviour:
   TimeRecharge: 100
   secondsToEmptyRecgarg: 10
   Aboima: 0
+  MagazinText: {fileID: 0}
+  AboimaText: {fileID: 0}

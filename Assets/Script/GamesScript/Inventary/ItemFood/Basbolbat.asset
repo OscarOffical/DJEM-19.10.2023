@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a75fd1a7be59d145bebe1222e8f82b9, type: 3}
   m_Name: Basbolbat
   m_EditorClassIdentifier: 
-  ItemType: 0
+  ItemType: 2
   ItemName: Basbolbat
   MaximumAmout: 1
   itemDescription: 
   icon: {fileID: -1891376938, guid: ca3521f203f5bdf47b2757d95cd32325, type: 3}
-  ItemPrifbs: {fileID: 8057224883993029151, guid: b70bf73e01ad8af4283cf4a9127de045, type: 3}
+  ItemPrifbs: {fileID: 1536411631065758282, guid: 9d401d9797384d84b82086e97a690490, type: 3}
   isConsumeable: 0
   changeFood: 0
   ChangeHealth: 0

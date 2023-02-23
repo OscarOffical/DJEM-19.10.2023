@@ -40,8 +40,9 @@ public class PlayerControler : MonoBehaviour
         Walking();
     }
 
+    
 
-    private void Walking()
+    private  void Walking()
     {
         _moveInputX = Input.GetAxis("Horizontal");
         _moveInputY = Input.GetAxis("Vertical");

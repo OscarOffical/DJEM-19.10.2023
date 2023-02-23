@@ -11,10 +11,7 @@ public class InventarySlot : MonoBehaviour
     public int amount; // текущее количество предметов, в слоте
     public bool isEmpty = true;// €чейка зан€та или нет
     public GameObject iconGO; // каритнка где будет будет отображатьс€ картинка предемета в €чейке 
-    public TMP_Text ItemAmountText;// количество в цибрах( визуал) 
-
-
-   
+    public TMP_Text ItemAmountText;// количество в цибрах(визуал)  
     public int IdSlot;
 
 
@@ -31,10 +28,7 @@ public class InventarySlot : MonoBehaviour
     }
     
 
-    private void Update()
-    {
-        
-    }
+    
 
 
 

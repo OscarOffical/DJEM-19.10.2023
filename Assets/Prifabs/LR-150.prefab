@@ -13,13 +13,13 @@ GameObject:
   - component: {fileID: 6936873541799637323}
   - component: {fileID: 763182802640239384}
   - component: {fileID: 8016995040424160649}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LR-150
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2194839218535718544
 Transform:
   m_ObjectHideFlags: 0
@@ -107,6 +107,8 @@ MonoBehaviour:
   TimeRecharge: 100
   secondsToEmptyRecgarg: 0
   Aboima: 0
+  MagazinText: {fileID: 0}
+  AboimaText: {fileID: 0}
 --- !u!114 &763182802640239384
 MonoBehaviour:
   m_ObjectHideFlags: 0

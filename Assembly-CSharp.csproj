@@ -62,20 +62,27 @@
     <Compile Include="Assets\Script\GamesScript\Player\PlayerControler.cs" />
     <Compile Include="Assets\Script\GamesScript\LogicWeapenScripts\IShot.cs" />
     <Compile Include="Assets\Script\GamesScript\Inventary\ItemFood.cs" />
+    <Compile Include="Assets\Script\GamesScript\UI\DeleteItemYesAndNo.cs" />
     <Compile Include="Assets\Script\OpenHotkeysPanel.cs" />
+    <Compile Include="Assets\Script\GamesScript\ItemGames\Resurs.cs" />
+    <Compile Include="Assets\Script\GamesScript\UI\OpenClosePAnelInfo.cs" />
     <Compile Include="Assets\Script\OpenClose.cs" />
     <Compile Include="Assets\Script\GamesScript\UI\ButtonUseing.cs" />
     <Compile Include="Assets\Script\PanelOptoin\ButtonPanelOpption.cs" />
     <Compile Include="Assets\Script\OpenGraphicsPanel.cs" />
     <Compile Include="Assets\Script\GamesScript\Inventary\ItemHeal.cs" />
+    <Compile Include="Assets\Script\GamesScript\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\GamesScript\UI\ButtonCreat.cs" />
     <Compile Include="Assets\Script\GamesScript\Inventary\ItemScripteblObject.cs" />
     <Compile Include="Assets\Script\GamesScript\LogicWeapenScripts\baseballbar.cs" />
     <Compile Include="Assets\Script\GamesScript\Player\WeaponКotation.cs" />
     <Compile Include="Assets\Script\ISetActionPanel.cs" />
     <Compile Include="Assets\Script\GamesScript\Inventary\InventaryManger.cs" />
     <Compile Include="Assets\Script\ScenesScript\ManagerScenes.cs" />
+    <Compile Include="Assets\Script\GamesScript\Inventary\NullSlot.cs" />
     <Compile Include="Assets\Script\SoundsScripts\Sound.cs" />
     <Compile Include="Assets\Script\GamesScript\Inventary\InventarySlot.cs" />
+    <Compile Include="Assets\Script\GamesScript\Player\Sloy.cs" />
     <Compile Include="Assets\Script\PanelOptoin\ClosePanelSound.cs" />
     <Compile Include="Assets\Script\GamesScript\Player\WeaponGun.cs" />
     <Compile Include="Assets\Script\GamesScript\Inventary\Item.cs" />
@@ -87,7 +94,10 @@
     <Compile Include="Assets\Script\QuitButton.cs" />
     <Compile Include="Assets\Script\GamesScript\Player\Indicetors.cs" />
     <Compile Include="Assets\Script\GamesScript\Inventary\QulckPanel.cs" />
-    <Compile Include="Assets\Script\GamesScript\Info.cs" />
+    <Compile Include="Assets\Script\GamesScript\Craft\CraftManager.cs" />
+    <Compile Include="Assets\Script\GamesScript\Craft\CraftCreator.cs" />
+    <Compile Include="Assets\Script\GamesScript\Craft\FillCraftDitals.cs" />
+    <Compile Include="Assets\Script\GamesScript\Craft\CraftDetelsAmount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -839,11 +849,17 @@
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>

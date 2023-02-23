@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a75fd1a7be59d145bebe1222e8f82b9, type: 3}
+  m_Name: Pickaxe
+  m_EditorClassIdentifier: 
+  ItemType: 2
+  ItemName: Pickaxe
+  MaximumAmout: 1
+  itemDescription: njfg
+  icon: {fileID: 852051777, guid: 531876bc9ae6a3347ba4c1a52691928c, type: 3}
+  ItemPrifbs: {fileID: 8284888572112876423, guid: 6c9b134f0a2e0924e92d267ca65c3963, type: 3}
+  isConsumeable: 0
+  changeFood: 0
+  ChangeHealth: 0
+  ChangeWater: 0
+  RecoveryFood: 0

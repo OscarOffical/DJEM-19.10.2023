@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a75fd1a7be59d145bebe1222e8f82b9, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  ItemType: 0
+  ItemType: 2
   ItemName: Pistol
   MaximumAmout: 1
   itemDescription: 
   icon: {fileID: 407773120, guid: decf4b1f1f10835449fc1416cc24eb4b, type: 3}
-  ItemPrifbs: {fileID: 698097100512199599, guid: fa578b0229eac5f459883c1553c15c25, type: 3}
+  ItemPrifbs: {fileID: 3849331009244667437, guid: 98fe3b59850c64743bf484973fb65395, type: 3}
   isConsumeable: 0
   changeFood: 0
   ChangeHealth: 0
